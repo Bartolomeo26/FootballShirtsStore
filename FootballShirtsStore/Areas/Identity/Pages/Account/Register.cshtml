@@ -9,7 +9,7 @@
         <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post" class="needs-validation" novalidate>
             <div class="mb-3">
                 <label class="form-label" asp-for="Input.Email">Email</label>
-                <input class="form-control" asp-for="Input.Email" type="text" autocomplete="username" aria-required="true" required>
+                <input class="form-control" asp-for="Input.Email" type="email" autocomplete="username" aria-required="true" required>
                 <div class="valid-feedback">
                     Looks good!
                 </div>
@@ -30,6 +30,12 @@
             <div class="mb-3">
                 <label class="form-label" asp-for="Input.ConfirmPassword">Confirm Password</label>
                 <input class="form-control" asp-for="Input.ConfirmPassword" type="password" autocomplete="new-password" aria-required="true" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+                <div class="invalid-feedback">
+                    You need to confirm your password!
+                </div>
             </div>
             <button id="registerSubmit" class="btn btn-success">Register</button>
         </form>
