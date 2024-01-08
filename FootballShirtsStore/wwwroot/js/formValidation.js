@@ -16,3 +16,10 @@
         }, false)
     })
 })()
+
+document.querySelector("input[type='email']").value = "";
+
+const span = document.querySelector('.span-danger');
+const passwords = document.querySelectorAll("input[type='password']")
+passwords[0].addEventListener('input', () => { span.innerHTML = ''; })
+passwords[1].addEventListener('input', () => { span.innerHTML = ''; })

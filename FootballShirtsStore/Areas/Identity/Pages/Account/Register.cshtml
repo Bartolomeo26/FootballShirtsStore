@@ -5,6 +5,7 @@
 }
 <main>
     <div class="container mb-5">
+        <div asp-validation-summary="ModelOnly" class="alert alert-danger alert-dismissible fade show pb-0" role="alert"><button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>
         <h1>Register</h1>
         <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post" class="needs-validation" novalidate>
             <div class="mb-3">
@@ -30,6 +31,7 @@
             <div class="mb-3">
                 <label class="form-label" asp-for="Input.ConfirmPassword">Confirm Password</label>
                 <input class="form-control" asp-for="Input.ConfirmPassword" type="password" autocomplete="new-password" aria-required="true" required>
+                <span asp-validation-for="Input.ConfirmPassword" class="text-danger span-danger"></span>
                 <div class="valid-feedback">
                     Looks good!
                 </div>
@@ -37,11 +39,10 @@
                     You need to confirm your password!
                 </div>
             </div>
-            <button id="registerSubmit" class="btn btn-success">Register</button>
+            <button id="registerSubmit" type="submit" class="btn btn-success">Register</button>
         </form>
     </div>
 </main>
-
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
